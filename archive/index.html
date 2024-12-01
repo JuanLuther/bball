@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZC Basketball Court Booking</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#courts">Available Courts</a></li>
+          <li><a href="#booking">Book a Court</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <h1>Welcome to the ZC Basketball Court Booking System</h1>
+      <p>Book your court easily and play your favorite sport.</p>
+      <a href="#courts" class="cta-button">Find Available Courts</a>
+    </section>
+
+    <!-- Available Courts Section -->
+    <section id="courts" class="courts">
+      <h2>Available Courts</h2>
+      <div class="court-list">
+        <div class="court">
+          <h3>Court 1</h3>
+          <p>Location: Avalo</p>
+          <p>Available: 10:00 AM - 6:00 PM</p>
+          <a href="#booking" class="book-button">Book Now</a>
+        </div>
+        <div class="court">
+          <h3>Court 2</h3>
+          <p>Location: Bulilit</p>
+          <p>Available: 9:00 AM - 5:00 PM</p>
+          <a href="#booking" class="book-button">Book Now</a>
+        </div>
+        <div class="court">
+          <h3>Court 3</h3>
+          <p>Location: Tebis & Sean</p>
+          <p>Available: 12:00 PM - 8:00 PM</p>
+          <a href="#booking" class="book-button">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+      <h2>Book a Court</h2>
+      <form action="#" method="post">
+        <label for="court">Select Court:</label>
+        <select id="court" name="court">
+          <option value="court1">Court 1 - Downtown</option>
+          <option value="court2">Court 2 - Central Park</option>
+          <option value="court3">Court 3 - East Side</option>
+        </select>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" name="time" required />
+
+        <button type="submit" class="submit-btn">Book Now</button>
+      </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions, feel free to reach out!</p>
+      <p>Email: support@basketballbooking.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Basketball Court Booking. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: sans-serif; */
+  line-height: 1.6;
+  /* background-color: #f4f4f4; */
+  /* color: #333; */
+}
+
+#home {
+  /* background-color: #2a9d8e; */
+}
+.nav-item {
+  margin-left: 48px;
+}
+/* Customizing btn-primary to be a professional orange */
+.btn-primary {
+  background-color: #e86e51; /* Smooth professional orange */
+  border-color: #e86e51; /* Matching border color */
+  color: #fff; /* Text color */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Button hover state */
+.btn-primary:hover {
+  background-color: #e86e51; /* Slightly darker orange for hover */
+  border-color: #e86e51; /* Darker border for hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Button focus state */
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 127, 50, 0.5); /* Professional orange glow for focus */
+  outline: none; /* Removes default outline */
+}
