@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import BookingModal from "./views/BookingModal";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -29,7 +30,7 @@ function App() {
       <header className="">
         <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div className="container-fluid">
-            <ul className="navbar-nav mx-auto">
+            <ul className="navbar-nav mx-md-auto">
               <li className="nav-item">
                 <a className="nav-link" href="#home">
                   Home
@@ -71,14 +72,20 @@ function App() {
         <div className="mb-4">
           <h2 className="fs-2">Available Courts</h2>
         </div>
-        <div className="row row-cols-3 g-5">
+        <div className="row row-cols-1 row-cols-md-3 g-5">
           <div className="col">
             <div className="card">
               <div className="card-body">
                 <h3 className="card-title">Court 1</h3>
                 <p className="card-text">Location: Avalo</p>
                 <p className="card-text">Available: 10:00 AM - 6:00 PM</p>
-                <a href="#booking" className="book-button btn btn-primary">
+                <a
+                  href="#booking"
+                  className="book-button btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-booking"
+                  data-court="Avalo"
+                >
                   Book Now
                 </a>
               </div>
@@ -90,7 +97,13 @@ function App() {
                 <h3>Court 2</h3>
                 <p>Location: Bulilit</p>
                 <p>Available: 9:00 AM - 5:00 PM</p>
-                <a href="#booking" className="book-button btn btn-primary">
+                <a
+                  href="#booking"
+                  className="book-button btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-booking"
+                  data-court="Bulilit"
+                >
                   Book Now
                 </a>
               </div>
@@ -102,7 +115,13 @@ function App() {
                 <h3>Court 3</h3>
                 <p>Location: Tebis & Sean</p>
                 <p>Available: 12:00 PM - 8:00 PM</p>
-                <a href="#booking" className="book-button btn btn-primary">
+                <a
+                  href="#booking"
+                  className="book-button btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-booking"
+                  data-court="Tebis & Sean"
+                >
                   Book Now
                 </a>
               </div>
@@ -111,64 +130,14 @@ function App() {
         </div>
       </section>
 
-      {/* Booking Section  */}
-      <section id="booking" className="booking p-5">
-        <h2 className="fs-2 text-center">Book a Court</h2>
-        <form
-          action="#"
-          method="post"
-          className="card-body mx-auto row row-cols-1 g-4 w-50"
-        >
-          <div className="col">
-            <label className="col-form-label" key="court" htmlFor="court">
-              Select Court:
-            </label>
-            <select id="court" name="court" className="form-select">
-              <option value="court1">Court 1 - Avalo</option>
-              <option value="court2">Court 2 - Bulilit</option>
-              <option value="court3">Court 3 - Tebis & Sean</option>
-            </select>
-          </div>
-          <div className="col">
-            <label className="col-form-label" key="date" htmlFor="date">
-              Select Date:
-            </label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="col">
-            <label className="col-form-label" key="time" htmlFor="time">
-              Select Time:
-            </label>
-            <input
-              type="time"
-              id="time"
-              name="time"
-              className="form-control"
-              required
-            />
-          </div>
-          <div className="col-12 text-center">
-            <button type="submit" className="submit-btn btn btn-primary">
-              Book Now
-            </button>
-          </div>
-        </form>
-      </section>
+      {/* Booking */}
+      <BookingModal />
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className="contact p-5 text-center bg-body-tertiary"
-      >
+      <section id="contact" className="contact p-5 text-center">
         <h2>Contact Us</h2>
         <p>If you have any questions, feel free to reach out!</p>
-        <p>Email: support@basketballbooking.com</p>
+        <p>Email: jerickdalemendoza@gmail.com</p>
       </section>
 
       {/* Footer  */}
