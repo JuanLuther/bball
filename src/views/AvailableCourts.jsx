@@ -20,7 +20,7 @@ const AvailableCourts = ({ startTime, endTime, date }) => {
           .filter(
             (court) => !(court.booked || []).includes(parseInt(startTime))
           )
-          .map((court, index) => (
+          .map((court) => (
             <CourtCard
               key={court.court_id} // Ensure unique keys
               courtNumber={court.court_name}
