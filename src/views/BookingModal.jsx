@@ -69,17 +69,51 @@ const BookingModal = () => {
                     required
                   />
                 </div>
-                <div className="col">
+                <div className="col-6">
                   <label className="col-form-label" key="time" htmlFor="time">
-                    <span className="text-danger">* </span> Select Time:
+                    <span className="text-danger">* </span> Start Time:
                   </label>
-                  <input
-                    type="time"
-                    id="time"
+                  <select
                     name="time"
-                    className="form-control"
+                    id="time"
+                    className="form-select"
                     required
-                  />
+                  >
+                    <option value="">---</option>
+                    <option value="8">08:00 AM</option>
+                    <option value="9">09:00 AM</option>
+                    <option value="10">10:00 AM</option>
+                    <option value="11">11:00 AM</option>
+                    <option value="12">12:00 PM</option>
+                    <option value="13">01:00 PM</option>
+                    <option value="14">02:00 PM</option>
+                    <option value="15">03:00 PM</option>
+                    <option value="16">04:00 PM</option>
+                    <option value="17">05:00 PM</option>
+                    <option value="18">06:00 PM</option>
+                    <option value="19">07:00 PM</option>
+                    <option value="20">08:00 PM</option>
+                    <option value="21">09:00 PM</option>
+                    <option value="22">10:00 PM</option>
+                  </select>
+                </div>
+                <div className="col-6">
+                  <label className="col-form-label" key="hours" htmlFor="hours">
+                    <span className="text-danger">* </span> Hours:
+                  </label>
+                  <select
+                    name="hours"
+                    id="hours"
+                    className="form-select"
+                    required
+                  >
+                    <option value="">---</option>
+                    <option value="1">1 Hour</option>
+                    <option value="2">2 Hours</option>
+                    <option value="3">3 Hours</option>
+                    <option value="4">4 Hours</option>
+                    <option value="5">5 Hours</option>
+                  </select>
                 </div>
               </div>
               <div className="modal-footer">

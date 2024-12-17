@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import BookingModal from "./views/BookingModal";
+import Filter from "./views/Filter";
+import AvailableCourts from "./views/AvailableCourts";
 
 function App() {
   // const [count, setCount] = useState(0);
   const [showButton, setShowButton] = useState(false);
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
 
   const checkScroll = () => {
     if (window.scrollY > 300) {
@@ -42,11 +46,6 @@ function App() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#booking">
-                  Book a Court
-                </a>
-              </li>
-              <li className="nav-item">
                 <a className="nav-link" href="#contact">
                   Contact
                 </a>
@@ -67,68 +66,32 @@ function App() {
         </a>
       </section>
 
-      {/* Available Courts Section  */}
-      <section id="courts" className="courts p-5  text-center bg-body-tertiary">
+      {/* Calendar */}
+
+      <section id="courts" className="bg-body-tertiary p-5">
         <div className="mb-4">
-          <h2 className="fs-2">Available Courts</h2>
+          <h2 className="fs-2 text-center">Available Courts</h2>
         </div>
-        <div className="row row-cols-1 row-cols-md-3 g-5">
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h3 className="card-title">Court 1</h3>
-                <p className="card-text">Location: Avalo</p>
-                <p className="card-text">Available: 10:00 AM - 6:00 PM</p>
-                <a
-                  href="#booking"
-                  className="book-button btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-booking"
-                  data-court="Avalo"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
+        <div className="d-flex flex-column gap-5 align-items-center">
+          <div className="">
+            <Filter
+              startTime={startTime}
+              setStartTime={setStartTime}
+              endTime={endTime}
+              setEndTime={setEndTime}
+            />
           </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h3>Court 2</h3>
-                <p>Location: Bulilit</p>
-                <p>Available: 9:00 AM - 5:00 PM</p>
-                <a
-                  href="#booking"
-                  className="book-button btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-booking"
-                  data-court="Bulilit"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h3>Court 3</h3>
-                <p>Location: Tebis & Sean</p>
-                <p>Available: 12:00 PM - 8:00 PM</p>
-                <a
-                  href="#booking"
-                  className="book-button btn btn-primary"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-booking"
-                  data-court="Tebis & Sean"
-                >
-                  Book Now
-                </a>
-              </div>
-            </div>
+          <div className="col-12">
+            <AvailableCourts
+              startTime={startTime}
+              endTime={endTime}
+              date={"12-15-2024"}
+            />
           </div>
         </div>
       </section>
+
+      {/* Available Courts Section  */}
 
       {/* Booking */}
       <BookingModal />
